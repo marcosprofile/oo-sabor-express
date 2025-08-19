@@ -15,8 +15,9 @@ class Restaurante:
 
     @classmethod
     def listar_restaurantes(cls):
+        print(f'{"Nome do restaurante".ljust(20)} | {"Categoria".ljust(20)} | {"Avaliações".ljust(20)} | {"Status"}')
         for restaurante in cls.restaurantes:
-            print(f'{restaurante._nome.ljust(20)} | {restaurante._categoria.ljust(20)} | {restaurante.ativo}')
+            print(f'{restaurante._nome.ljust(20)} | {restaurante._categoria.ljust(20)} | {str(restaurante.media_avaliacoes).ljust(20)} | {restaurante.ativo}')
 
     @property
     def ativo(self):
@@ -30,7 +31,7 @@ class Restaurante:
         self._avaliacao.append(avaliacao)
 
     @property
-    def media_avaliacao(self):
+    def media_avaliacoes(self):
         if not self._avaliacao:
             return 0
         soma_das_notas = sum(avaliacao._nota for avaliacao in self._avaliacao)
