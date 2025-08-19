@@ -21,11 +21,3 @@ class Restaurante:
 
     def alternar_estado(self):
         self._ativo = not self._ativo
-
-restaurante_praca = Restaurante("praça", "gourmet")
-restaurante_praca.alternar_estado()
-restaurante_pizza = Restaurante("pizza", "italiana")
-restaurante_pizza.alternar_estado()
-
-print(f'{'Nome do restaurante'.ljust(20)} | {'Categoria'.ljust(20)} | {'Status'}')
-Restaurante.listar_restaurantes()
